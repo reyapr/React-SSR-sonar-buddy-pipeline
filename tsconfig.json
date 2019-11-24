@@ -10,8 +10,6 @@
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-  },
-  "include": [
-    "src"
-  ]
+    "moduleResolution": "node",
+  }
 }
