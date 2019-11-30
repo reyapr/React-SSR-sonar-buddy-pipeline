@@ -2,30 +2,30 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = (env, argv) =>{
-  const outputPath = argv.mode === 'production'? path.join(__dirname, 'build') : path.join(__dirname, 'dist')
+  const outputPath = argv.mode === 'production'? path.join(__dirname, 'prod') : path.join(__dirname, 'public')
 
   return {
     mode: argv.mode,
     devtool: 'source-map',
-    entry: path.join(__dirname, './src/index.tsx'),
+    entry: path.join(__dirname, './src/client/index.tsx'),
     output: {
       path: outputPath,
       publicPath: '/',
       filename: 'bundle.js'
     },
-    devServer: {
-      contentBase: outputPath,
-      publicPath: '/',
-      port: 3000,
-      historyApiFallback: true,
-    },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'public/index.html'),
-        filename: 'index.html',
-        inject: 'body'
-      })
-    ],
+    // devServer: {
+    //   contentBase: outputPath,
+    //   publicPath: '/',
+    //   port: 3000,
+    //   historyApiFallback: true,
+    // },
+    // plugins: [
+    //   new HtmlWebpackPlugin({
+    //     template: path.resolve(__dirname, 'public/index.html'),
+    //     filename: 'index.html',
+    //     inject: 'body'
+    //   })
+    // ],
     module:{
       rules: [
         {
