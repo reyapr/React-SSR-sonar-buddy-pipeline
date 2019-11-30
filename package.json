@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/index.tsx",
-    "dev:build:server": "webpack --config webpack.server.js --mode development"
+    "dev:server": "nodemon build/server.js",
+    "dev:build:server": "webpack --config webpack.server.js --mode development --watch"
   },
   "dependencies": {
     "@material-ui/core": "^4.2.1",
