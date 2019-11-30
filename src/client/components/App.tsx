@@ -2,7 +2,10 @@ import React from 'react';
 
 const App: React.FC = () => {
   return (
-    <div>React SSR</div>
+    <div>
+      <div>React SSR</div>
+      <button onClick={() => console.log('run')}>Click Me!</button>  
+    </div>
   )
 }
 

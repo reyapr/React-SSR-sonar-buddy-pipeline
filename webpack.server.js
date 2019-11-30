@@ -1,6 +1,6 @@
 const path = require('path')
 
-module.exports = {
+const config = {
   target: 'node',
   entry: './src/index.tsx',
   output: {
@@ -21,3 +21,5 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".json"],
   },
 }
+
+module.exports = config
