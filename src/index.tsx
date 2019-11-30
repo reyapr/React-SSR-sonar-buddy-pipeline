@@ -7,7 +7,7 @@ import html from './server/html'
 const app = express()
 
 
-// app.use(express.static('public'))     
+app.use(express.static('public'))     
 app.get('/', (req,  res) => {
   const content = renderToString(<App/>)
   

@@ -7,5 +7,6 @@ export default (content) => `
   </head>
   <body>
     <div id="app">${content}</div>
+    <script src="bundle.js"></script>
   </html>
 `
