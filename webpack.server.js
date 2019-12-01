@@ -1,4 +1,5 @@
 const path = require('path')
+const webpackNodeExternals = require('webpack-node-externals')
 
 const config = {
   target: 'node',
@@ -20,6 +21,7 @@ const config = {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: [".ts", ".tsx", ".js", ".json"],
   },
+  externals: [webpackNodeExternals()]
 }
 
 module.exports = config
