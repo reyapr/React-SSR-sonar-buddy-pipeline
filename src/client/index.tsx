@@ -6,7 +6,10 @@ import { Provider } from 'react-redux'
 import generateStore from './common/store'
 import { renderRoutes } from 'react-router-config'
 
-const store = generateStore()
+declare global {
+  interface Window { INITIAL_STATE: any; }
+}
+const store = generateStore(window.INITIAL_STATE)
 
 ReactDOM.hydrate(
   <Provider store={store}>
