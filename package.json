@@ -34,6 +34,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "serialize-javascript": "^2.1.1",
     "typescript": "^3.5.3",
     "webpack-node-externals": "^1.7.2"
   },
@@ -43,6 +44,7 @@
     "@babel/preset-react": "^7.0.0",
     "@types/express": "^4.17.2",
     "@types/react-router-config": "^5.0.1",
+    "@types/serialize-javascript": "^1.5.0",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.6.1",
     "awesome-typescript-loader": "^5.2.1",
