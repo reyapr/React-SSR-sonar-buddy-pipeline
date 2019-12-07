@@ -4,13 +4,14 @@ import { BrowserRouter } from 'react-router-dom'
 import Routes from './Routes'
 import { Provider } from 'react-redux'
 import generateStore from './common/store'
+import { renderRoutes } from 'react-router-config'
 
 const store = generateStore()
 
 ReactDOM.hydrate(
   <Provider store={store}>
     <BrowserRouter>
-      <Routes/>
+      <div>{renderRoutes(Routes)}</div> 
     </BrowserRouter>
   </Provider>
   , document.querySelector('#app'))
