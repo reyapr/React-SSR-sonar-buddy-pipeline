@@ -5,7 +5,7 @@ const App: React.FC = () => {
   return (
     <div>
       <div>React SSR</div>
-      <Link to="/user">Go To User</Link>  
+      <Link to="/users">Go To User</Link>  
     </div>
   )
 }
