@@ -1,6 +1,6 @@
 import React from 'react'
 import App from './components/App'
-import User from './components/User'
+import User, { loadData } from './components/User'
 
 export default [
   {
@@ -11,6 +11,7 @@ export default [
   {
     path: '/users',
     component: User,
-    exact: true
+    exact: true,
+    loadData
   }
 ] 

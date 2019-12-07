@@ -3,11 +3,6 @@ import { connect } from 'react-redux'
 import { fetchUsers } from '../actions/user'
 
 const User: React.FC = ({ users, ...props } : any) => {
-  
-  React.useEffect(() => {
-    props.fetchUsers()
-  }, [])
-  
   return (
     <div>
       <div>
@@ -27,8 +22,8 @@ const mapStateToProps = (state: any) => ({
   users: state.users
 })
 
-const mapDispatchToProps = {
-  fetchUsers
+export const loadData = (store: any) => {
+  return store.dispatch(fetchUsers())
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(User)
+export default connect(mapStateToProps, null)(User)
