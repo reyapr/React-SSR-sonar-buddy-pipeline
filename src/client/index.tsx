@@ -1,11 +1,16 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import App from './components/App'
 import { BrowserRouter } from 'react-router-dom'
 import Routes from './Routes'
+import { Provider } from 'react-redux'
+import generateStore from './common/store'
+
+const store = generateStore()
 
 ReactDOM.hydrate(
-  <BrowserRouter>
-    <Routes/>
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routes/>
+    </BrowserRouter>
+  </Provider>
   , document.querySelector('#app'))
