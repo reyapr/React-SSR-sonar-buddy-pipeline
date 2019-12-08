@@ -1,6 +1,7 @@
 import React from 'react'
 import App from './components/App'
 import User, { loadData } from './components/User'
+import NotFoundPage from './components/NotFoundPage'
 
 export default [
   {
@@ -13,5 +14,8 @@ export default [
     component: User,
     exact: true,
     loadData
+  },
+  {
+    component: NotFoundPage
   }
 ] 
