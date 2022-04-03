@@ -1,11 +1,11 @@
-name: Sonar-Scanner
+name: sonar-scanner
 on:
   pull_request:
     branches:
       - master # or the name of your main branch
 jobs:
   build:
-    name: Sonar-Scanner
+    name: "scan quality gate"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
