@@ -8,7 +8,8 @@ const app = express()
 
 app.use(express.static('public'))     
 app.get('*', (req,  res) => {
-  const store = generateStore()
+  const store = generateStore() // test
+  let ea = 'gal ke'
   
   const promises = matchRoutes(Routes, req.path).map(({ route }: any) => {
     return route.loadData && route.loadData(store)

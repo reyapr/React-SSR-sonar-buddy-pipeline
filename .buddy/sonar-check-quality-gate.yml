@@ -1,0 +1,21 @@
+- pipeline: 'Sonar Scanner & Check Quality Gate'
+  trigger_mode: 'ON_EVERY_PUSH'
+  ref_name: 'refs/heads/*'
+  ref_type: 'WILDCARD'
+  trigger_condition: 'ALWAYS'
+  auto_clear_cache: true
+  actions:
+    - action: 'Execute: sonar-scanner & check quality gate'
+      type: 'BUILD'
+      working_directory: '/buddy/sonar'
+      docker_image_name: 'library/node'
+      docker_image_tag: '12'
+      execute_commands:
+      - 'npm i -g sonarqube-scanner'
+      - 'sonar-scanner -Dsonar.login=${SONAR_TOKEN}'
+      - 'bash .buddy/scripts/sonar/check-quality-gate.sh'
+      trigger_condition: 'ALWAYS'
+      shell: 'BASH'
+      volume_mappings:
+        - '/:/buddy/sonar'
+    
