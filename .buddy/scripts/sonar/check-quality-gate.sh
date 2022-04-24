@@ -2,6 +2,9 @@
 
 source "$(dirname "$0")/common.sh"
 
+apt-get update
+apt-get -y install jq
+
 if [[ -z "${SONAR_TOKEN}" ]]; then
   echo "Set the SONAR_TOKEN env variable."
   exit 1

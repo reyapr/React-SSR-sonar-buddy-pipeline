@@ -4,12 +4,12 @@
 set -e
 set -o pipefail
 
-gray=`tput setaf 7`
-blue=`tput setaf 4`
-red=`tput setaf 1`
-yellow=`tput setaf 3`
-green=`tput setaf 2`
-reset=`tput sgr0`
+gray="\\e[37m"
+blue="\\e[36m"
+red="\\e[31m"
+yellow="\\e[33m"
+green="\\e[32m"
+reset="\\e[0m"
 
 info() { echo -e "${blue}INFO: $*${reset}"; }
 error() { echo -e "${red}ERROR: $*${reset}"; }
