@@ -12,7 +12,7 @@
       docker_image_tag: '12'
       execute_commands:
       - 'apt-get update'
-      - 'apt-get install jq'
+      - 'apt-get -y install jq'
       - 'npm i -g sonarqube-scanner'
       - 'sonar-scanner -Dsonar.login=${SONAR_TOKEN}'
       - 'bash .buddy/scripts/sonar/check-quality-gate.sh'
