@@ -40,7 +40,7 @@ qualityGateUrl="${serverUrl}/api/qualitygates/project_status?analysisId=${analys
 qualityGateStatus="$(curl --silent --fail --show-error --user "${SONAR_TOKEN}": "${qualityGateUrl}" | jq -r '.projectStatus.status')"
 
 if [[ ${qualityGateStatus} == "OK" ]];then
-success "Quality Gate has PASSED."
+   success "Quality Gate has PASSED."
 elif [[ ${qualityGateStatus} == "WARN" ]];then
    warn "Warnings on Quality Gate."
 elif [[ ${qualityGateStatus} == "ERROR" ]];then

@@ -1,4 +1,4 @@
-- pipeline: 'Sonar Scanner Check Quality Gate'
+- pipeline: 'Sonar Scanner & Check Quality Gate'
   trigger_mode: 'ON_EVERY_PUSH'
   ref_name: 'refs/heads/*'
   ref_type: 'WILDCARD'
