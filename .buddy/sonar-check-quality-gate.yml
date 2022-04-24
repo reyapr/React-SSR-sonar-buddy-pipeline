@@ -5,25 +5,13 @@
   trigger_condition: 'ALWAYS'
   auto_clear_cache: true
   actions:
-    - action: 'Prepare jq lib'
-      type: 'BUILD'
-      working_directory: '/buddy/sonar'
-      region: 'ap-southeast-1'
-      docker_image_name: 'library/ubuntu'
-      docker_image_tag: '21.10'
-      execute_commands:
-        - 'apt-get install jq'
-      volume_mappings:
-        - '/:/buddy/sonar'
-      trigger_condition: 'ALWAYS'
-      shell: 'BASH'
     - action: 'Execute: sonar-scanner & check quality gate'
       type: 'BUILD'
       working_directory: '/buddy/sonar'
       docker_image_name: 'library/node'
       docker_image_tag: '12'
       execute_commands:
-      
+      - 'apt-get update'
       - 'npm i -g sonarqube-scanner'
       - 'npm run sonar-scanner -Dsonar.login=${SONAR_TOKEN}'
       - 'bash .buddy/scripts/sonar/check-quality-gate.sh'
