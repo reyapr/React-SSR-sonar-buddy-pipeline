@@ -11,7 +11,7 @@
       docker_image_name: 'library/node'
       docker_image_tag: '12'
       execute_commands:
-      - 'apt-get install jq'
+      - 'sudo apt-get install jq'
       - 'npm i -g sonarqube-scanner'
       - 'npm run sonar-scanner -Dsonar.login=${SONAR_TOKEN}'
       - 'bash .buddy/scripts/sonar/check-quality-gate.sh'
